@@ -1,0 +1,9 @@
+doMain에서 요청하거나 원하는 데이터를 서버 API, Local DB와 통신하여 처리 / 알맞게 반환해주는 역할 / Repository 패턴으로 구현
+서버 API, 로컬 DB와의 통신을 담당하는 역할 / Retrofit 관련 코드인 api패키지와 Repository 패키지를 가지고 있고 Local DB(Room) 관련 DB패키지도 가지고 있다.
+통신에 사용될 Entity Model 패키지를 가지고 있으며 Data <-> Domain간의 Model 데이터 변환을 담당하는 Mapper도 가지고 있다.
+Data Layer는 Domain의 Model을 알아야할 Mapper와 Domain의 Repository 인터페이스 구현을 위해 Domain Layer에 의존성이 생기게 된다.
+
+
+local: 로컬 데이터 저장소와 관련된 클래스를 포함합니다. 로컬 데이터베이스, SharedPreferences 등이 여기에 속합니다.
+remote: 원격 데이터 소스와 상호작용하는 클래스를 포함합니다. API 클라이언트, 웹 서비스 등이 여기에 속합니다.
+repositories: domain 패키지의 repositories 인터페이스를 구현하는 클래스를 포함합니다. 데이터를 가져오고 저장하는 구체적인 방법을 구현합니다.
